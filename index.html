@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>tavro-blog</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'assets/css/uikit.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+        <link rel="stylesheet" href="{% static 'custom-assets/css/index-style.css' %}">
+    </head>
+    <!-- body start -->
+    <body class="tavro-blog-body">
+        <!-- blog start -->
+        <div class="tavro-blog">
+            <!-- header start -->
+            <header class="tavro-blog-header">
+                <div class="header_inner">
+                    <div class="left-side"> 
+                        <a href="#">
+                            <b>
+                                <h1 class="tavro-blog-header-title">tavro-blog</h1>
+                            </b>
+                        </a>
+                    </div>
+                    <div class="right-side">
+                        <a href="#">
+                            <img src="{{profile.img.url}}" class="header-avatar">
+                        </a>
+                        <div uk-drop="mode: click;" class="header-dropdown">
+                            <ul>
+                                <li>
+                                    <a class="header-dropdown-options"  href="/settings"> account setting</a>
+                                </li>
+                                <li>
+                                    <a class="header-dropdown-options"  href="/logout"> log out</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- header end -->
+            <!-- blog content start -->
+            <div style="background-color: #afac9b;" class="container m-auto">
+                <div class="lg:flex justify-center lg:space-x-10 lg:space-y-0 space-y-5">
+                    <!-- posts section start -->
+                    <div class="space-y-5 flex-shrink-0 lg:w-7/12">
+                        {% for post in posts reversed %}
+                        <div class="blog-post-container">
+                            <div class="flex justify-between items-center px-4 py-3">
+                                <div class="flex flex-1 items-center space-x-4">
+                                    <a href="/profile/{{user.username}}">
+                                        <div class="bg-gradient-to-tr from-yellow-600 to-pink-600 p-0.5 rounded-full"> 
+                                            <img src="{{profile.img.url}}" class="bg-gray-200 border border-white rounded-full w-8 h-8">
+                                        </div>
+                                    </a>
+                                    <span style="color: #473a43; margin-left: 8px; font-family: Consolas,serif;" class="block capitalize font-semibold "> {{post.user}} </span>
+                                </div>
+                            </div>
+                            <div class="post-img-container">
+                                <a href="{{post.img.url}}">
+                                    <img class="post-img" src="{{post.img.url}}">
+                                </a>
+                            </div>
+                            <p class="post-caption">
+                                <span class="author">@{{post.user}}:</span> {{post.caption}}
+                            </p>
+                            <a href="/like?post_id={{post.id}}">
+                                <div class="like-section">
+                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="thumb" style="">
+                                        <path d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z" />
+                                    </svg>
+                                    <span class="like-text">{{post.like_amount}}</span>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <!-- posts section end -->
+                    <!-- create post section start -->
+                    <div class="post-creation-container">
+                        <div class="post-creation-inner">
+                            <div class="post-creation-header-container">
+                                <h4 class="post-creation-header"><b>Create post</b></h4>
+                            </div>
+                            <div style="width:100%; margin-top: 0px; padding-bottom: 0px;" class="flex justify-center flex-center text-center">
+                                <div style="width:100%;" class="flex flex-col choose-upload text-center">
+                                    <form action="upload" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <input class="post-creation-file-input" type="file" name="image_upload">
+                                        <textarea class="post-creation-text-input" name="caption" placeholder="content..."></textarea>
+                                        <button class="post-creation-btn" type="submit">Post</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- create post section end -->
+                </div>               
+            </div>
+            <!-- blog content end -->
+        </div>
+        <!-- blog end -->
+        <script src="{% static 'assets/js/uikit.js' %}"></script>
+    </body>
+    <!-- body end -->
+</html>

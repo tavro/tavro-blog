@@ -1,0 +1,117 @@
+.tavro-blog-body {
+    background-color: #afac9b; 
+    height: auto;
+}
+
+.tavro-blog {
+    height:100%; 
+    background-color: #afac9b; 
+    padding-bottom: 128px;
+}
+
+/**/
+
+.tavro-blog-header {
+    border-bottom: none; 
+    font-family: Consolas,serif; 
+    background-color:#1d1f1c;
+}
+
+.tavro-blog-header-title {
+    font-size: 24px; 
+    text-transform: lowercase; 
+    font-family: Consolas,serif; 
+    color: #579e40;
+}
+
+.header-dropdown-options {
+    color: #335b25;
+}
+
+.header-dropdown {
+    width: 156px; 
+    outline: 2px solid #000; 
+    background-color: #d3d1c6; 
+    padding: 16px; 
+    border-radius: 4px;
+}
+
+/**/
+
+.post-img-container {
+    margin-left: 8px; 
+    margin-right: 8px;
+}
+
+.post-img {
+    width: 100%; 
+}
+
+.post-caption {
+    font-family: Consolas,serif; 
+    font-size: 16px; 
+    background-color: #eae8dc; 
+    padding-left: 8px; 
+    margin-left: 8px; 
+    margin-right: 8px; 
+    border-left: 6px solid #afac9b;
+}
+
+.author {
+    color: #579e40; 
+    font-weight: bold; 
+    text-decoration-line: underline;
+}
+
+.blog-post-container {
+    outline: 2px solid #000; 
+    background-color: #d3d1c6; 
+    border-radius: 8px;
+}
+
+.like-section {
+    padding: 8px;
+}
+
+.thumb {
+    width: 21px; 
+    height: 21px; 
+    fill: #1d1f1c; 
+    float: left; 
+    margin-right:4px;
+}
+
+.like-text {
+    color: #1d1f1c;
+}
+
+/**/
+
+.post-creation-inner {
+    border-radius: 4px; 
+    outline: 2px solid #000; 
+    background-color: #eae8dc;
+}
+
+.post-creation-header-container {
+    background-color: #d3d1c6;
+}
+
+.post-creation-header {
+    padding: 16px;
+}
+
+.post-creation-file-input, .post-creation-text-input {
+    padding: 8px;
+}
+
+.post-creation-btn {
+    width: 100%; 
+    background-color: #473a43; 
+    color: #eae8dc; 
+    border-top-left-radius: 0px; 
+    border-top-right-radius: 0px; 
+    padding:8px;
+}
+
+/**/
