@@ -1,2 +1,2 @@
 # tavro-blog
-repository for (in the near future) django blog app that will replace the blog-tab on my website
+![](https://raw.githubusercontent.com/tavro/tavro-blog/main/Screenshot%202022-07-04%20at%2022-03-01%20tavro-blog.png)
