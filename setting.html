@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>settings</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/tailwind.css' %}">
+        <link rel="stylesheet" href="{% static 'custom-assets/css/index-style.css' %}">
+    </head>
+
+    <body class="settings-body">
+        <div class="settings-content-container">
+            <div class="container m-auto settings-content">
+                <h1 class="settings-header">Account Setting for <b>{{user.username}}</b></h1>
+                <div class="general-settings-container">
+                    <h3 class="general-settings-header">General</h3>
+                    <div class="general-settings">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="settings-form-inside-container">
+                                <div>
+                                    <label for="img">
+                                        <b>Profile Image</b>
+                                    </label>
+                                    <div class="settings-profile-img-container">
+                                        <img class="settings-profile-img" src="{{profile.img.url}}" />
+                                        <input class="settings-profile-img-input" type="file" name="image">
+                                    </div>
+                                </div>
+                                <div class="settings-input-containers">
+                                    <label for="about"><b>About me</b></label>
+                                    <textarea id="about" name="about" rows="3" class="settings-input-fields">{{profile.description}}</textarea>
+                                </div> 
+                                <div class="settings-input-containers">
+                                    <label for="location"><b>Location</b></label>
+                                    <input class="settings-input-fields" type="text" value="{{profile.location}}" name="location" placeholder="" >
+                                </div>
+                            </div>
+                            <div class="settings-button-container">
+                                <button class="settings-button settings-cancel-button">
+                                    <a href="/">
+                                        Cancel
+                                    </a>
+                                </button>
+                                <button type="submit" class="settings-button settings-save-button">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

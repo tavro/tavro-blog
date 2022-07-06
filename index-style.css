@@ -1,3 +1,7 @@
+/*-----------*/
+/* BLOG-PAGE */
+/*-----------*/
+
 .tavro-blog-body {
     background-color: #afac9b; 
     height: auto;
@@ -8,8 +12,6 @@
     background-color: #afac9b; 
     padding-bottom: 128px;
 }
-
-/**/
 
 .tavro-blog-header {
     border-bottom: none; 
@@ -35,8 +37,6 @@
     padding: 16px; 
     border-radius: 4px;
 }
-
-/**/
 
 .post-img-container {
     margin-left: 8px; 
@@ -85,8 +85,6 @@
     color: #1d1f1c;
 }
 
-/**/
-
 .post-creation-inner {
     border-radius: 4px; 
     outline: 2px solid #000; 
@@ -114,4 +112,95 @@
     padding:8px;
 }
 
-/**/
+/*---------------*/
+/* SETTINGS-PAGE */
+/*---------------*/
+
+.settings-body, .settings-content-container {
+    background-color: #afac9b; 
+    height: 100%;
+}
+
+.settings-content {
+    background-color: #afac9b; 
+    color: #473a43; 
+    font-family: Consolas,serif;
+}
+
+.settings-header {
+    font-family: Consolas,serif;
+    font-size: 24px;
+}
+
+.general-settings-container {
+    background-color: #afac9b;
+    margin-top: 32px;
+}
+
+.general-settings-header {
+    font-family: Consolas,serif;
+    font-size: 20px;
+    padding-bottom: 4px;
+}
+
+.general-settings {
+    outline: 2px solid #000; 
+    background-color: #d3d1c6;
+    border-radius: 8px;
+}
+
+.settings-input-fields {
+    padding: 8px; 
+    background-color: #eae8dc;
+}
+
+.settings-profile-img-container {
+    background-color: #eae8dc; 
+    border-radius: 4px; 
+    width: 256px; 
+    padding: 0px; 
+    margin: 0px;
+}
+
+.settings-profile-img {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    width: 100%;
+}
+
+.settings-profile-img-input {
+    padding: 8px; 
+    border-radius: 4px; 
+    width: 256px; 
+    background-color: #eae8dc;
+}
+
+.settings-form-inside-container {
+    padding:24px;
+}
+
+.settings-input-containers {
+    padding-top:16px;
+}
+
+.settings-button-container {
+    padding-bottom: 24px;
+    padding-right: 24px;
+    text-align: right;
+}
+
+.settings-button {
+    width: 72px;
+    height: 32px;
+    border-radius: 4px;
+}
+
+.settings-cancel-button {
+    background-color: #eae8dc; 
+    color: #473a43;
+}
+
+.settings-save-button {
+    background-color: #473a43; 
+    color: #eae8dc;
+}
